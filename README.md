@@ -1,6 +1,6 @@
 # Overview
 - [📦 crates.io](https://crates.io/crates/jsonice)
-- [⚖ Zlib license](https://opensource.org/licenses/Zlib)
+- [⚖ zlib license](https://opensource.org/licenses/Zlib)
 
 CLI tool to read JSON from stdin and pretty-print it to stdout. It does not load the whole JSON document into memory.
 
@@ -33,4 +33,4 @@ cargo build
 ```
 
 # Contribute
-All contributions shall be licensed under the [Zlib license](https://opensource.org/licenses/Zlib).
+All contributions shall be licensed under the [zlib license](https://opensource.org/licenses/Zlib).
