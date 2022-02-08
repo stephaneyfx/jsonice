@@ -10,7 +10,7 @@ repository = "https://github.com/stephaneyfx/jsonice.git"
 keywords = ["json", "pretty", "prettify", "streaming", "stream"]
 
 [dependencies]
-serde_json = "1.0.57"
-serde-transcode = "1.1.0"
+serde_json = "1.0.78"
+serde-transcode = "1.1.1"
 structopt = "0.3.18"
-thiserror = "1.0.20"
+thiserror = "1.0.30"
