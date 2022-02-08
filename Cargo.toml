@@ -2,12 +2,11 @@
 name = "jsonice"
 version = "0.1.0"
 authors = ["Stephane Raux <stephaneyfx@gmail.com>"]
-edition = "2018"
+edition = "2021"
 description = "Streaming JSON pretty printer"
 license = "0BSD"
 homepage = "https://github.com/stephaneyfx/jsonice"
 repository = "https://github.com/stephaneyfx/jsonice.git"
-readme = "README.md"
 keywords = ["json", "pretty", "prettify", "streaming", "stream"]
 
 [dependencies]
