@@ -13,19 +13,19 @@
 
 #![deny(warnings)]
 
+use clap::Parser;
 use std::{
     error::Error,
     io::{self, BufReader, BufWriter, Write},
 };
-use structopt::StructOpt;
 use thiserror::Error;
 
 /// Pretty-prints JSON without requiring to load it all in memory.
-#[derive(Debug, StructOpt)]
-#[structopt(author)]
+#[derive(Debug, Parser)]
+#[clap(author, version, about)]
 struct Args {
     /// Indentation size in number of spaces
-    #[structopt(long, default_value = "2")]
+    #[clap(long, default_value = "2")]
     indent_size: usize,
 }
 
@@ -45,7 +45,7 @@ fn print_error(mut e: &dyn Error) {
 }
 
 fn run() -> Result<(), AppError> {
-    let args = Args::from_args();
+    let args = Args::parse();
     let indent = vec![b' '; args.indent_size];
     let stdout = io::stdout();
     let mut writer = CatchBrokenPipe::new(BufWriter::new(stdout.lock()));
