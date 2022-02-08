@@ -1,4 +1,15 @@
-// Copyright (C) 2020 Stephane Raux. Distributed under the zlib license.
+// Copyright (C) 2020-2022 Stephane Raux. Distributed under the 0BSD license.
+
+//! # Overview
+//! - [📦 crates.io](https://crates.io/crates/jsonice)
+//! - [📖 Documentation](https://docs.rs/jsonice)
+//! - [⚖ 0BSD license](https://spdx.org/licenses/0BSD.html)
+//!
+//! CLI tool to read JSON from stdin and pretty-print it to stdout. It does not load the whole JSON
+//! document into memory.
+//!
+//! # Contribute
+//! All contributions shall be licensed under the [0BSD license](https://spdx.org/licenses/0BSD.html).
 
 #![deny(warnings)]
 
@@ -97,7 +108,10 @@ impl<W: Write> CatchBrokenPipe<W> {
         F: FnOnce(&mut W) -> io::Result<T>,
     {
         let r = f(&mut self.writer);
-        if r.as_ref().err().map_or(false, |e| e.kind() == io::ErrorKind::BrokenPipe) {
+        if r.as_ref()
+            .err()
+            .map_or(false, |e| e.kind() == io::ErrorKind::BrokenPipe)
+        {
             self.broken_pipe = true;
         }
         r
